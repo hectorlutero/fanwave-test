@@ -1,0 +1,13 @@
+{
+  "app.js": "js/app.js",
+  "editor.js": "js/editor.js",
+  "runtime.js": "js/runtime.js",
+  "../theme.json": "../theme.json",
+  "hmr.json": "hmr.json",
+  "entrypoints.json": "entrypoints.json",
+  "app.js.map": "js/app.js.map",
+  "app.hot-update.js.map": "app.2b0791446f81f301.hot-update.js.map",
+  "editor.js.map": "js/editor.js.map",
+  "runtime.js.map": "js/runtime.js.map",
+  "runtime.hot-update.js.map": "runtime.2b0791446f81f301.hot-update.js.map"
+}

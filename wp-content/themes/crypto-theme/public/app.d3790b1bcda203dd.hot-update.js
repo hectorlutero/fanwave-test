@@ -1,0 +1,63 @@
+self["webpackHotUpdate_roots_bud_sage_sage"]("app",{
+
+/***/ "../node_modules/swc-loader/src/index.js??swc!../node_modules/@roots/wordpress-hmr/lib/loader.cjs??@roots/wordpress-hmr/loader!../node_modules/vue-loader/dist/index.js??vue!./scripts/components/CryptoTable.vue?vue&type=script&lang=js":
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/axios/index.js");
+/* harmony import */ var _CryptoItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./scripts/components/CryptoItem.vue");
+/* harmony import */ var _MyModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./scripts/components/MyModal.vue");
+/* harmony import */ var _MyModal_vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_MyModal_vue__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function() {
+        return {
+            coins: [],
+            selectedCurrency: 'eur'
+        };
+    },
+    mounted () {
+        setTimeout(()=>{
+            this.loadCoins();
+        }, 1500);
+    },
+    methods: {
+        loadCoins: function() {
+            axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(this.getApiUrl()).then((response)=>{
+                this.coins = response.data;
+            }).catch((error)=>{
+                console.log(error);
+            });
+        },
+        changeCurrency: function(currency) {
+            this.selectedCurrency = currency;
+            this.coins = [];
+            setTimeout(()=>{
+                this.loadCoins();
+            }, 1500);
+        },
+        getApiUrl: function() {
+            return `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.selectedCurrency}&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en`;
+        }
+    },
+    components: {
+        CryptoItem: _CryptoItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+        MyModal: (_MyModal_vue__WEBPACK_IMPORTED_MODULE_2___default())
+    }
+});
+
+
+/***/ }),
+
+/***/ "./scripts/components/MyModal.vue":
+/***/ (() => {
+
+
+
+/***/ })
+
+});
+//# sourceMappingURL=app.d3790b1bcda203dd.hot-update.js.map
